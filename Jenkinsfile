@@ -2,6 +2,7 @@ pipeline {
     agent any
     parameters {
 		  string defaultValue: 'hacker', name: 'p1'
+	    	  string defaultValue: 'attacks', name: 'p2'
 		}
     stages {
         stage('Checkout') {
@@ -45,7 +46,7 @@ pipeline {
              steps {
                 echo 'Deploying...'
                 // Run the Java program with an example argument
-                sh 'java -cp target/your-app-1.0-SNAPSHOT.jar com.apasoft.ToUpper "${p1}"'
+                sh 'java -cp target/your-app-1.0-SNAPSHOT.jar com.apasoft.ToUpper "${p1}" "${p2}"'
             }
         }
     }
