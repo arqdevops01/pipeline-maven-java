@@ -41,12 +41,11 @@ pipeline {
         stage('Deploy') {
              parameters {
                           string defaultValue: 'hacker', name: 'p1'
-                          string defaultValue: 'attack', name: 'p2'
                         }
              steps {
                 echo 'Deploying...'
                 // Run the Java program with an example argument
-                sh 'java -cp target/your-app-1.0-SNAPSHOT.jar com.apasoft.ToUpper ${p1} ${p2}'
+                sh 'java -cp target/your-app-1.0-SNAPSHOT.jar com.apasoft.ToUpper ${p1}'
             }
         }
     }
