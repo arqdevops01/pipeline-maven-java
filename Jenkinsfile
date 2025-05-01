@@ -39,9 +39,9 @@ pipeline {
             }
         }
         stage('Deploy') {
-             parameters {
+        parameters {
                           string defaultValue: 'hacker', name: 'p1'
-                        }
+                   }
              steps {
                 echo 'Deploying...'
                 // Run the Java program with an example argument
